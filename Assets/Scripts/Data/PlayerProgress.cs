@@ -93,7 +93,7 @@ public class PlayerProgress : ScriptableObject
 
     public void SetUnlockedSection(int sectionId)
     {
-        //TO DO
+        unlockedSections.Add(sectionId);
     }
 
     public void UpdateLevelHighScore(int sectionId, int levelId, int score)

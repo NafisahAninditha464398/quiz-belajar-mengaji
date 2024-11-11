@@ -115,6 +115,48 @@ public class GameManager : MonoBehaviour
         SavePlayerProgress();
     }
 
+    public bool IsLastLevelInSection(int sectionId, int levelId)
+    {
+        if (currentSection != null)
+        {
+            // Mendapatkan level terakhir di section tersebut
+            LevelData lastLevelData = currentSection.levels[currentSection.levels.Count - 1];
+            return lastLevelData.levelId == levelId; // Mengembalikan true jika levelId adalah level terakhir
+        }
+
+        return false; // Jika section tidak ditemukan, return false
+    }
+
+    public void UnlockNextSectionAndFirstLevel(int sectionId)
+    {
+        if (currentSection != null)
+        {
+            // Mendapatkan indeks dari section saat ini di list allSections
+            int nextSectionIndex = allSections.IndexOf(currentSection) + 1;
+
+            // Pastikan section berikutnya ada di dalam batas list
+            if (nextSectionIndex < allSections.Count)
+            {
+                // Mendapatkan data untuk section berikutnya
+                SectionData nextSectionData = allSections[nextSectionIndex];
+
+                // Unlock section berikutnya jika belum terbuka
+                if (!playerProgress.unlockedSections.Contains(nextSectionData.sectionId))
+                {
+                    playerProgress.unlockedSections.Add(nextSectionData.sectionId);
+                }
+
+                // Unlock level pertama di section berikutnya
+                if (nextSectionData.levels.Count > 0)
+                {
+                    int firstLevelId = nextSectionData.levels[0].levelId;
+                    playerProgress.SetUnlockedLevel(nextSectionData.sectionId, firstLevelId);
+                }
+            }
+        }
+    }
+
+
     private void UnlockNextLevel(int score)
     {
         // Logika untuk membuka level berikutnya di section yang sama
@@ -122,6 +164,10 @@ public class GameManager : MonoBehaviour
         {
             playerProgress.SetUnlockedLevel(currentSection.sectionId, currentLevel.levelId + 1);
             Debug.Log($" playerProgress: {currentLevel.levelId + 1} adalah {playerProgress.IsLevelUnlocked(currentSection.sectionId, currentLevel.levelId + 1)}");
+            if (IsLastLevelInSection(currentSection.sectionId, currentLevel.levelId))
+            {
+                UnlockNextSectionAndFirstLevel(currentSection.sectionId);
+            }
         }
     }
 
