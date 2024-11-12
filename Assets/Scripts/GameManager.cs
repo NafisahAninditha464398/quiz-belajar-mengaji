@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,9 +34,11 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         // Menghubungkan event dari UIManager ke GameManager
-        FindObjectOfType<UIManager>().OnLevelSelected += StartGame;
-        FindObjectOfType<QuizManager>().OnQuizEnd += GameOver;
-        FindObjectOfType<AchievementManager>().OnAchievementUnlock += uiManager.ShowAchievementPopup;
+        uiManager.OnLevelSelected += StartGame;
+        quizManager.OnQuizEnd += GameOver;
+        achievementManager.OnAchievementUnlock += uiManager.ShowAchievementPopup;
+        uiManager.OnOkButtonPressed += ProceedToNextLevel;
+        uiManager.OnBackButtonPressed += BackToMenu;
     }
 
     private void Start()
@@ -46,7 +49,7 @@ public class GameManager : MonoBehaviour
         playerProgress.InitializePlayerProgress();
         achievementManager.LoadAchievementProgress();
         // Inisialisasi game, bisa memanggil GenerateSectionButtons dari UIManager
-        uiManager.ShowSectionPanel();
+        uiManager.ShowSectionPanel(allSections, playerProgress);
         SomeMethod();
         Debug.Log($"Cek inisialisasi: {playerProgress.IsLevelUnlocked(1, 1)}");
         Debug.Log($"Cek inisialisasi: {playerProgress.IsLevelUnlocked(1, 2)}");
@@ -171,6 +174,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ProceedToNextLevel()
+    {
+        uiManager.ShowLevelPanel(currentSection, playerProgress);
+    }
+
+    public void BackToMenu()
+    {
+        uiManager.ShowSectionPanel(allSections, playerProgress);
+    }
     private void SavePlayerProgress()
     {
         // Logika untuk menyimpan data progres pemain (misalnya ke file atau PlayerPrefs)

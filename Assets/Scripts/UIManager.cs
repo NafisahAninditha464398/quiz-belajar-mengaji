@@ -25,7 +25,12 @@ public class UIManager : MonoBehaviour
     public GameObject achievementPrefab;
     public Transform achievementContainer;
 
+    // public Button okButtonPrefab;
+    // public Transform buttonContainer;
+
     public event Action<SectionData, LevelData> OnLevelSelected;
+    public event Action OnOkButtonPressed;
+    public event Action OnBackButtonPressed;
 
 
     // Start is called before the first frame update
@@ -40,15 +45,16 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void ShowSectionPanel()
+    public void ShowSectionPanel(List<SectionData> allSections, PlayerProgress progress)
     {
-        sectionPanel.SetActive(true);
-        GenerateSectionButtons(); // Memanggil fungsi untuk generate button section
+        ShowSectionPanelUI();
+        GenerateSectionButtons(allSections, progress); // Memanggil fungsi untuk generate button section
     }
-    public void ShowLevelPanel(SectionData section)
+    public void ShowLevelPanel(SectionData section, PlayerProgress progress)
     {
-        levelPanel.SetActive(true);
-        GenerateLevelButtons(section);
+        Debug.Log($"lastSection: {section.sectionName}");
+        ShowLevelPanelUI();
+        GenerateLevelButtons(section, progress);
     }
 
     public void HideSectionPanel()
@@ -60,16 +66,22 @@ public class UIManager : MonoBehaviour
         levelPanel.SetActive(false);
     }
 
-    public void GenerateSectionButtons()
+    public void ShowSectionPanelUI()
+    {
+        sectionPanel.SetActive(true); // Menampilkan panel UI
+    }
+    public void ShowLevelPanelUI()
+    {
+        levelPanel.SetActive(true); // Menampilkan panel UI
+    }
+
+    public void GenerateSectionButtons(List<SectionData> allSections, PlayerProgress progress)
     {
         // Menghapus semua button yang ada di container sebelum menambah yang baru
         foreach (Transform child in sectionButtonContainer)
         {
             Destroy(child.gameObject);
         }
-
-        // Mendapatkan semua section dari GameManager
-        List<SectionData> allSections = GameManager.Instance.allSections;
 
         foreach (SectionData section in allSections)
         {
@@ -80,15 +92,15 @@ public class UIManager : MonoBehaviour
             button.GetComponentInChildren<Text>().text = section.sectionName;
 
             // Memeriksa apakah section ini sudah terbuka menggunakan PlayerProgress
-            button.GetComponent<Button>().interactable = GameManager.Instance.playerProgress.IsSectionUnlocked(section.sectionId);
-            Debug.Log($"apakah terbuka: {GameManager.Instance.playerProgress.IsSectionUnlocked(section.sectionId)} di section ID: {section.sectionId}");
+            button.GetComponent<Button>().interactable = progress.IsSectionUnlocked(section.sectionId);
+            Debug.Log($"apakah terbuka: {progress.IsSectionUnlocked(section.sectionId)} di section ID: {section.sectionId}");
 
             // Menambahkan listener untuk button
-            button.GetComponent<Button>().onClick.AddListener(() => OnSectionButtonClicked(section));
+            button.GetComponent<Button>().onClick.AddListener(() => OnSectionButtonClicked(section, progress));
         }
     }
 
-    public void GenerateLevelButtons(SectionData section)
+    public void GenerateLevelButtons(SectionData section, PlayerProgress progress)
     {
         Debug.Log($"Section Level Ini: {section.sectionId}");
         // Bersihkan container level button sebelum mengisi ulang
@@ -107,16 +119,16 @@ public class UIManager : MonoBehaviour
             button.GetComponentInChildren<Text>().text = level.levelName;
 
             // Memeriksa apakah level ini sudah terbuka menggunakan PlayerProgress
-            button.GetComponent<Button>().interactable = GameManager.Instance.playerProgress.IsLevelUnlocked(section.sectionId, level.levelId);
+            button.GetComponent<Button>().interactable = progress.IsLevelUnlocked(section.sectionId, level.levelId);
 
             // Menambahkan listener untuk button
             button.GetComponent<Button>().onClick.AddListener(() => OnLevelButtonClicked(section, level));
         }
     }
 
-    private void OnSectionButtonClicked(SectionData section)
+    private void OnSectionButtonClicked(SectionData section, PlayerProgress progress)
     {
-        ShowLevelPanel(section);
+        ShowLevelPanel(section, progress);
     }
     private void OnLevelButtonClicked(SectionData section, LevelData level)
     {
@@ -142,10 +154,15 @@ public class UIManager : MonoBehaviour
         achievementBadge.sprite = achievement.icon;
     }
 
-    public void OnOkButtonClick()
+    //dipanggil di button OnClick()
+    public void HandleOkButtonClick()
     {
-        SectionData lastSection = GameManager.Instance.currentSection;
-        ShowLevelPanel(lastSection);
+        OnOkButtonPressed?.Invoke();
+    }
+
+    public void HandleBackButtonClick()
+    {
+        OnBackButtonPressed?.Invoke();
     }
 
     public void ShowAchievementPanel()
