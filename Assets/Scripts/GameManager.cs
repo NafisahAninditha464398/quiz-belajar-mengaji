@@ -58,8 +58,11 @@ public class GameManager : MonoBehaviour
 
     private void OnDisable()
     {
-        FindObjectOfType<UIManager>().OnLevelSelected -= StartGame;
-        FindObjectOfType<QuizManager>().OnQuizEnd -= GameOver;
+        uiManager.OnLevelSelected -= StartGame;
+        quizManager.OnQuizEnd -= GameOver;
+        achievementManager.OnAchievementUnlock -= uiManager.ShowAchievementPopup;
+        uiManager.OnOkButtonPressed -= ProceedToNextLevel;
+        uiManager.OnBackButtonPressed -= BackToMenu;
     }
 
     public void SomeMethod()

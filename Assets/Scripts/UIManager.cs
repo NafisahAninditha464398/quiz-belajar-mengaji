@@ -20,13 +20,11 @@ public class UIManager : MonoBehaviour
 
     public GameObject achievementPopUpPanel;
     public Image achievementBadge;
+    public Transform achievementContainer;
 
     public GameObject achievementPanel;
     public GameObject achievementPrefab;
-    public Transform achievementContainer;
-
-    // public Button okButtonPrefab;
-    // public Transform buttonContainer;
+    public Transform achievementViewport;
 
     public event Action<SectionData, LevelData> OnLevelSelected;
     public event Action OnOkButtonPressed;
@@ -167,12 +165,15 @@ public class UIManager : MonoBehaviour
 
     public void ShowAchievementPanel()
     {
+        Debug.Log("Show ini dipanggil");
         achievementPanel.SetActive(true);
         List<AchievementData> achievements = AchievementManager.Instance.GetUnlockedAchievements();
         foreach (var achievement in achievements)
         {
+            Debug.Log($"Achievement Kosong?: {achievements}");
             if (achievement.isUnlocked)
             {
+                Debug.Log($"Achievement Sudah Unlocked: {achievement.achievementName}");
                 // Tampilkan achievement yang sudah unlock, misalnya melalui UI Manager
                 ShowUnlockedAchievement(achievement);
             }
@@ -182,7 +183,8 @@ public class UIManager : MonoBehaviour
     public void ShowUnlockedAchievement(AchievementData achievement)
     {
         // Buat elemen UI atau update bagian UI khusus achievement
-        GameObject achievementUI = Instantiate(achievementPrefab, achievementContainer);
+        Debug.Log("Cek Buat Badge");
+        GameObject achievementUI = Instantiate(achievementPrefab, achievementViewport);
         achievementUI.GetComponentInChildren<Text>().text = achievement.achievementName;
         achievementUI.GetComponentInChildren<Image>().sprite = achievement.icon;
     }

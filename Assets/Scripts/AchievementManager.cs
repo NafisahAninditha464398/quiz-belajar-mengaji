@@ -43,10 +43,12 @@ public class AchievementManager : MonoBehaviour
     {
         PlayerPrefs.SetInt(achievement.achievementName, 1);
         PlayerPrefs.Save();
+        Debug.Log("Save achievement");
     }
 
     public void LoadAchievementProgress()
     {
+        Debug.Log("Load achievement");
         foreach (var achievement in achievements)
         {
             achievement.isUnlocked = PlayerPrefs.GetInt(achievement.achievementName, 0) == 1;
