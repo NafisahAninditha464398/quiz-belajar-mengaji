@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Cek section lock: {playerProgress.unlockedSections.Count}");
 
         CheckAndShowPlayerNameInput();
+        uiManager.UpdatePlayerNameUI();
 
         // Inisialisasi game, bisa memanggil GenerateSectionButtons dari UIManager
         uiManager.ShowSectionPanel(allSections);
