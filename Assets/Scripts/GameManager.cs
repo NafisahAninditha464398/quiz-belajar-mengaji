@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public QuizManager quizManager; // Referensi ke QuizManager
     public AchievementManager achievementManager;
 
+    public PlayerInfoManager playerInfoManager;
     public PlayerProgress playerProgress; // Data progres pemain
     public SectionData currentSection; // Section yang sedang dimainkan
     public LevelData currentLevel; // Level yang sedang dimainkan
@@ -48,13 +49,18 @@ public class GameManager : MonoBehaviour
 
         playerProgress.LoadProgress();
         playerProgress.LoadFromSave(playerProgress.unlockedSectionsList, playerProgress.unlockedSections);
-        Debug.Log($"Cek section lock asap: {playerProgress.IsSectionUnlocked(2)}");
+
         Debug.Log($"Cek section ada: {playerProgress.sectionsProgress.Count}");
+        uiManager.SetPlayerInfo(playerInfoManager);
         uiManager.SetPlayerProgress(playerProgress);  // Dependency Injection
+
         playerProgress.InitializePlayerProgress();
         achievementManager.LoadAchievementProgress();
 
         Debug.Log($"Cek section lock: {playerProgress.unlockedSections.Count}");
+
+        CheckAndShowPlayerNameInput();
+
         // Inisialisasi game, bisa memanggil GenerateSectionButtons dari UIManager
         uiManager.ShowSectionPanel(allSections);
         SomeMethod();
@@ -88,6 +94,14 @@ public class GameManager : MonoBehaviour
 
         // Logika yang memerlukan currentSection dan currentLevel
         Debug.Log($"Current Section ID: {currentSection.sectionId}, Current Level ID: {currentLevel.levelId}");
+    }
+
+    private void CheckAndShowPlayerNameInput()
+    {
+        if (!playerInfoManager.IsPlayerNameSet())
+        {
+            uiManager.ShowPlayerNameInputPanel();
+        }
     }
 
     public void StartGame(SectionData section, LevelData level)
@@ -174,7 +188,6 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
 
     private void UnlockNextLevel(int score)
     {

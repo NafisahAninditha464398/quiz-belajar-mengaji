@@ -26,11 +26,17 @@ public class UIManager : MonoBehaviour
     public GameObject achievementPrefab;
     public Transform achievementViewport;
 
+    public GameObject playerNameInputPanel;
+    public InputField playerNameInputField;
+
     public event Action<SectionData, LevelData> OnLevelSelected;
     public event Action OnOkButtonPressed;
     public event Action OnBackButtonPressed;
 
+    public Text playerNameText;
+
     private PlayerProgress playerProgress;
+    private PlayerInfoManager playerInfoManager;
 
 
     // Start is called before the first frame update
@@ -50,6 +56,34 @@ public class UIManager : MonoBehaviour
     {
         playerProgress = progress;
         Debug.Log("Called");
+    }
+
+    public void SetPlayerInfo(PlayerInfoManager playerInfo)
+    {
+        playerInfoManager = playerInfo;
+    }
+
+    public void UpdatePlayerNameUI()
+    {
+        playerNameText.text = playerInfoManager.GetPlayerName();
+    }
+
+    public void ShowPlayerNameInputPanel()
+    {
+        playerNameInputPanel.SetActive(true);
+    }
+
+    // Dipanggil saat tombol Simpan ditekan oleh pemain
+    public void OnSavePlayerName()
+    {
+        string playerName = playerNameInputField.text;
+
+        if (!string.IsNullOrEmpty(playerName))
+        {
+            playerInfoManager.SavePlayerName(playerName);
+            UpdatePlayerNameUI();
+            playerNameInputPanel.SetActive(false);
+        }
     }
 
     public void ShowSectionPanel(List<SectionData> allSections)
