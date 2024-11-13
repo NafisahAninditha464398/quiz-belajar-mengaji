@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
         playerProgress.LoadProgress();
         playerProgress.LoadFromSave(playerProgress.unlockedSectionsList, playerProgress.unlockedSections);
 
-        Debug.Log($"Cek section ada: {playerProgress.sectionsProgress.Count}");
         uiManager.SetPlayerInfo(playerInfoManager);
         uiManager.SetPlayerProgress(playerProgress);  // Dependency Injection
 
@@ -66,8 +65,6 @@ public class GameManager : MonoBehaviour
         uiManager.ShowSectionPanel(allSections);
         SomeMethod();
         Debug.Log($"Cek inisialisasi: {playerProgress.IsLevelUnlocked(1, 1)}");
-        Debug.Log($"Cek inisialisasi: {playerProgress.IsLevelUnlocked(1, 2)}");
-        Debug.Log($"Player Highscore: {playerProgress.GetLevelHighScore(1, 1)}");
     }
 
     private void OnDisable()
@@ -109,7 +106,6 @@ public class GameManager : MonoBehaviour
     {
         currentSection = section;
         currentLevel = level;
-        // isGameOver = false;
 
         Debug.Log($"Starting game at Section: {section.sectionName}, Level: {level.levelName}");
 
@@ -120,15 +116,11 @@ public class GameManager : MonoBehaviour
 
         //Meload quiz dari QuizManager
         quizManager.LoadQuiz(section, level);
-
-        // Reset data level jika perlu
-        // Mulai loop game atau tampilkan pertanyaan pertama
     }
 
     public void GameOver(int score, int totalQuestions)
     {
         Debug.Log("GameOver");
-        // isGameOver = true;
 
         // Tampilkan skor pemain dan panel akhir game
         uiManager.ShowScorePanel(score, totalQuestions);
@@ -143,9 +135,6 @@ public class GameManager : MonoBehaviour
         playerProgress.PrepareForSave(playerProgress.unlockedSectionsList, playerProgress.unlockedSections);
         playerProgress.SaveProgress();
         uiManager.SetPlayerProgress(playerProgress);
-
-        Debug.Log($"Cek section lock: {playerProgress.sectionsProgress.Count}");
-        Debug.Log($"Cek section Hash lock: {playerProgress.unlockedSections.Count}");
     }
 
     public bool IsLastLevelInSection(int sectionId, int levelId)

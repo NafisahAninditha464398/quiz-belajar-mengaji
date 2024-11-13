@@ -19,17 +19,6 @@ public class QuizManager : MonoBehaviour
 
     public event Action<int, int> OnQuizEnd;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void LoadQuiz(SectionData section, LevelData level)
     {
@@ -41,7 +30,7 @@ public class QuizManager : MonoBehaviour
             QnAs = level.QnAs;
             totalQuestions = QnAs.Count;
 
-            Debug.Log($" cek ada: {QnAs}");
+            Debug.Log($"IsQnAs null? : {QnAs}");
             GenerateQuestion();
         }
     }
@@ -69,7 +58,7 @@ public class QuizManager : MonoBehaviour
         else
         {
             Debug.Log("Out of Questions");
-            Debug.Log($"jumlh pertanyaan: {displayedQuestions.Count}");
+            Debug.Log($"Jumlah pertanyaan: {displayedQuestions.Count}");
             AchievementManager.Instance.CheckAchievementProgress(correctAnswerCount);
             OnQuizEnd?.Invoke(score.GetScore(), totalQuestions); //event soal habis
         }

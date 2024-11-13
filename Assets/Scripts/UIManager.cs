@@ -39,18 +39,6 @@ public class UIManager : MonoBehaviour
     private PlayerInfoManager playerInfoManager;
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // Setter untuk Dependency Injection
     public void SetPlayerProgress(PlayerProgress progress)
     {
@@ -173,7 +161,7 @@ public class UIManager : MonoBehaviour
     }
     private void OnLevelButtonClicked(SectionData section, LevelData level)
     {
-        //bilang game udah mulai, info level dan section
+        //Memberi tahu Game Manager, game telah dimulai, info level dan section
         OnLevelSelected?.Invoke(section, level);
     }
     public void ShowGamePanel()
@@ -208,12 +196,10 @@ public class UIManager : MonoBehaviour
 
     public void ShowAchievementPanel()
     {
-        Debug.Log("Show ini dipanggil");
         achievementPanel.SetActive(true);
         List<AchievementData> achievements = AchievementManager.Instance.GetUnlockedAchievements();
         foreach (var achievement in achievements)
         {
-            Debug.Log($"Achievement Kosong?: {achievements}");
             if (achievement.isUnlocked)
             {
                 Debug.Log($"Achievement Sudah Unlocked: {achievement.achievementName}");
@@ -226,7 +212,6 @@ public class UIManager : MonoBehaviour
     public void ShowUnlockedAchievement(AchievementData achievement)
     {
         // Buat elemen UI atau update bagian UI khusus achievement
-        Debug.Log("Cek Buat Badge");
         GameObject achievementUI = Instantiate(achievementPrefab, achievementViewport);
         achievementUI.GetComponentInChildren<Text>().text = achievement.achievementName;
         achievementUI.GetComponentInChildren<Image>().sprite = achievement.icon;

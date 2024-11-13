@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //menyimpan semua variabel data yang berkaitan dengan progress yang dilakukan Player
-
-// [CreateAssetMenu(fileName = "PlayerProgress", menuName = "Quiz/Player Progress")]
 [System.Serializable]
 public class PlayerProgress : MonoBehaviour
 {
@@ -28,7 +26,6 @@ public class PlayerProgress : MonoBehaviour
         }
     }
 
-    //JSON
     // Fungsi Serialize untuk menyimpan progres ke PlayerPrefs
     public void SaveProgress()
     {
@@ -54,12 +51,8 @@ public class PlayerProgress : MonoBehaviour
     // Sebelum menyimpan ke JSON, pindahkan data HashSet ke List
     public void PrepareForSave(List<int> unlockedSectionsList, HashSet<int> unlockedSections)
     {
-        Debug.Log($"Cek Clear unlockedSectionsList: {unlockedSectionsList.Count}");
-        Debug.Log($"Cek section Hash: {unlockedSections.Count}");
         unlockedSectionsList.Clear();
         unlockedSectionsList.AddRange(unlockedSections);
-        Debug.Log($"Cek Add unlockedSectionsList: {unlockedSectionsList.Count}");
-        Debug.Log($"Cek Hash: {unlockedSections.Count}");
     }
 
     // Setelah data di-load dari JSON, pindahkan kembali data ke HashSet
@@ -67,19 +60,12 @@ public class PlayerProgress : MonoBehaviour
     {
         unlockedSections.Clear();
         unlockedSections.UnionWith(unlockedSectionsList);
-        Debug.Log($"Add unlockedSectionsList: {unlockedSectionsList.Count}");
-        Debug.Log($"Add section Hash: {unlockedSections.Count}");
     }
 
 
     // Fungsi untuk mendapatkan progres level berdasarkan ID
     public SectionProgress.LevelProgress GetLevelProgress(int sectionId, int levelId)
     {
-        // if (sectionProgressData.ContainsKey(sectionId))
-        // {
-        //     return sectionProgressData[sectionId].levelsProgress.Find(level => level.levelId == levelId);
-        // }
-        // return null;
         EnsureSectionExists(sectionId);
         return EnsureLevelExists(sectionId, levelId);
     }
@@ -87,7 +73,6 @@ public class PlayerProgress : MonoBehaviour
     public bool IsSectionUnlocked(int sectionId)
     {
         Debug.Log($"IsSectionUnlocked: {unlockedSections.Count}");
-        Debug.Log($"IsSectionUnlocked: {unlockedSections.Contains(sectionId)}");
         return unlockedSections.Contains(sectionId);
     }
 
@@ -106,15 +91,6 @@ public class PlayerProgress : MonoBehaviour
     // Fungsi untuk memastikan bahwa SectionProgress ada
     private void EnsureSectionExists(int sectionId)
     {
-        // if (!sectionProgressData.ContainsKey(sectionId))
-        // {
-        //     SectionProgress newSectionProgress = new SectionProgress
-        //     {
-        //         sectionId = sectionId,
-        //         levelsProgress = new List<SectionProgress.LevelProgress>()
-        //     };
-        //     sectionProgressData.Add(sectionId, newSectionProgress);
-        // }
         // Cek apakah section dengan sectionId sudah ada di daftar sectionsProgress
         SectionProgress sectionProgress = sectionsProgress.Find(s => s.sectionId == sectionId);
 
@@ -133,21 +109,6 @@ public class PlayerProgress : MonoBehaviour
     // Fungsi untuk memastikan bahwa LevelProgress ada dalam SectionProgress
     private SectionProgress.LevelProgress EnsureLevelExists(int sectionId, int levelId)
     {
-        // EnsureSectionExists(sectionId);
-        // SectionProgress sectionProgress = sectionProgressData[sectionId];
-        // SectionProgress.LevelProgress levelProgress = sectionProgress.levelsProgress.Find(level => level.levelId == levelId);
-        // if (levelProgress == null)
-        // {
-        //     levelProgress = new SectionProgress.LevelProgress
-        //     {
-        //         levelId = levelId,
-        //         highScore = 0, // Set default highScore jika diperlukan
-        //         isUnlocked = false // Set default isUnlocked jika diperlukan
-        //     };
-        //     sectionProgress.levelsProgress.Add(levelProgress);
-        // }
-        // return levelProgress;
-
         // Pastikan Section dengan sectionId ada
         EnsureSectionExists(sectionId);
 
@@ -191,23 +152,6 @@ public class PlayerProgress : MonoBehaviour
 
     public void InitializePlayerProgress()
     {
-        // // Pastikan Section 1 terbuka
-        // unlockedSections.Add(1);
-
-        // // Pastikan Section 1 ada di sectionProgressData
-        // if (!sectionProgressData.ContainsKey(1))
-        // {
-        //     SectionProgress newSectionProgress = new SectionProgress
-        //     {
-        //         sectionId = 1,
-        //         levelsProgress = new List<SectionProgress.LevelProgress>()
-        //     };
-        //     sectionProgressData.Add(1, newSectionProgress);
-        // }
-
-        // // Pastikan Level 1 di Section 1 terbuka
-        // SetUnlockedLevel(1, 1);
-
         // Pastikan Section 1 terbuka
         unlockedSections.Add(1);
 
