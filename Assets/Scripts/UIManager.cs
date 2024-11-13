@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     public event Action OnOkButtonPressed;
     public event Action OnBackButtonPressed;
 
+    private PlayerProgress playerProgress;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,16 +45,23 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void ShowSectionPanel(List<SectionData> allSections, PlayerProgress progress)
+    // Setter untuk Dependency Injection
+    public void SetPlayerProgress(PlayerProgress progress)
+    {
+        playerProgress = progress;
+        Debug.Log("Called");
+    }
+
+    public void ShowSectionPanel(List<SectionData> allSections)
     {
         ShowSectionPanelUI();
-        GenerateSectionButtons(allSections, progress); // Memanggil fungsi untuk generate button section
+        GenerateSectionButtons(allSections); // Memanggil fungsi untuk generate button section
     }
-    public void ShowLevelPanel(SectionData section, PlayerProgress progress)
+    public void ShowLevelPanel(SectionData section)
     {
         Debug.Log($"lastSection: {section.sectionName}");
         ShowLevelPanelUI();
-        GenerateLevelButtons(section, progress);
+        GenerateLevelButtons(section);
     }
 
     public void HideSectionPanel()
@@ -73,7 +82,7 @@ public class UIManager : MonoBehaviour
         levelPanel.SetActive(true); // Menampilkan panel UI
     }
 
-    public void GenerateSectionButtons(List<SectionData> allSections, PlayerProgress progress)
+    public void GenerateSectionButtons(List<SectionData> allSections)
     {
         // Menghapus semua button yang ada di container sebelum menambah yang baru
         foreach (Transform child in sectionButtonContainer)
@@ -90,15 +99,15 @@ public class UIManager : MonoBehaviour
             button.GetComponentInChildren<Text>().text = section.sectionName;
 
             // Memeriksa apakah section ini sudah terbuka menggunakan PlayerProgress
-            button.GetComponent<Button>().interactable = progress.IsSectionUnlocked(section.sectionId);
-            Debug.Log($"apakah terbuka: {progress.IsSectionUnlocked(section.sectionId)} di section ID: {section.sectionId}");
+            button.GetComponent<Button>().interactable = playerProgress.IsSectionUnlocked(section.sectionId);
+            Debug.Log($"apakah terbuka: {playerProgress.IsSectionUnlocked(section.sectionId)} di section ID: {section.sectionId}");
 
             // Menambahkan listener untuk button
-            button.GetComponent<Button>().onClick.AddListener(() => OnSectionButtonClicked(section, progress));
+            button.GetComponent<Button>().onClick.AddListener(() => OnSectionButtonClicked(section));
         }
     }
 
-    public void GenerateLevelButtons(SectionData section, PlayerProgress progress)
+    public void GenerateLevelButtons(SectionData section)
     {
         Debug.Log($"Section Level Ini: {section.sectionId}");
         // Bersihkan container level button sebelum mengisi ulang
@@ -117,16 +126,16 @@ public class UIManager : MonoBehaviour
             button.GetComponentInChildren<Text>().text = level.levelName;
 
             // Memeriksa apakah level ini sudah terbuka menggunakan PlayerProgress
-            button.GetComponent<Button>().interactable = progress.IsLevelUnlocked(section.sectionId, level.levelId);
+            button.GetComponent<Button>().interactable = playerProgress.IsLevelUnlocked(section.sectionId, level.levelId);
 
             // Menambahkan listener untuk button
             button.GetComponent<Button>().onClick.AddListener(() => OnLevelButtonClicked(section, level));
         }
     }
 
-    private void OnSectionButtonClicked(SectionData section, PlayerProgress progress)
+    private void OnSectionButtonClicked(SectionData section)
     {
-        ShowLevelPanel(section, progress);
+        ShowLevelPanel(section);
     }
     private void OnLevelButtonClicked(SectionData section, LevelData level)
     {
