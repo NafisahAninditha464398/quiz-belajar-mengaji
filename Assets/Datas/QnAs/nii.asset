@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: nii
+  m_EditorClassIdentifier: 
+  Question: Semua bunyi i disini dibaca panjang, kecuali?
+  QuestionDesc: Harakat Kasrah Panjang
+  Answers:
+  - {fileID: 21300000, guid: 4bbcf91f2a707a441a5a008acc388d79, type: 3}
+  - {fileID: 21300000, guid: d03a41fd3dd575b419019325682c354b, type: 3}
+  - {fileID: 21300000, guid: 59e1a4d55f5816d4c883f16b9b30a657, type: 3}
+  - {fileID: 21300000, guid: 88e25edd2aa6a0b428d7c23b7b95f7c2, type: 3}
+  CorrectAnswer: 2

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: man
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C MAN \u201D?"
+  QuestionDesc: Nun Sukun
+  Answers:
+  - {fileID: 21300000, guid: 028d794f59db5bd49b913240043e9ac6, type: 3}
+  - {fileID: 21300000, guid: ffd8f7a18d1c8a64190a2c35265e7d24, type: 3}
+  - {fileID: 21300000, guid: 0552ca3bc94397941b469c08fc9a0ba6, type: 3}
+  - {fileID: 21300000, guid: d6701a2c9e599374e851faf970656184, type: 3}
+  CorrectAnswer: 1

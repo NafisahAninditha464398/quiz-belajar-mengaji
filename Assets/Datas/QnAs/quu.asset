@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: quu
+  m_EditorClassIdentifier: 
+  Question: Semua bunyi u disini dibaca panjang, kecuali?
+  QuestionDesc: Harakat Dhammah Panjang
+  Answers:
+  - {fileID: 21300000, guid: 3392fd2ce03e03f498d7e953843304f9, type: 3}
+  - {fileID: 21300000, guid: f4663f9a4afec80499926dad865a3ace, type: 3}
+  - {fileID: 21300000, guid: 486b8236bbdf98243adadfb41077be37, type: 3}
+  - {fileID: 21300000, guid: cda17ae0543f83846b44c416fdf7dac7, type: 3}
+  CorrectAnswer: 2

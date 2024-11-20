@@ -4,6 +4,7 @@ public class QnA : ScriptableObject
 {
     public string Question;
     public string QuestionDesc;
-    public string[] Answers;
+    // public string[] Answers;
+    public Sprite[] Answers;
     public int CorrectAnswer;
 }

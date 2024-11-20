@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: minkum
+  m_EditorClassIdentifier: 
+  Question: "\u201CMim\u201D bertemu \u201Cnun sukun\u201D atau \u201Ctanwin\u201D
+    dibaca dengung, yang manakah itu?"
+  QuestionDesc: Mim Bertemu Nun Sukun Dengung
+  Answers:
+  - {fileID: 21300000, guid: 7e95dea77f567064586ba3daeffa5b34, type: 3}
+  - {fileID: 21300000, guid: a2439d1fde7f83d49a23f04148cfdd1a, type: 3}
+  - {fileID: 21300000, guid: b2fd0a7fe107d094c8f4784ba6fb6147, type: 3}
+  - {fileID: 21300000, guid: c7148f3ea6a98b345ba56f06efe672ec, type: 3}
+  CorrectAnswer: 3

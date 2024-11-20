@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: rabbii
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C RAB - BII \u201D?"
+  QuestionDesc: Tasydid
+  Answers:
+  - {fileID: 21300000, guid: d97db0c55ae960249aeff2af9e857435, type: 3}
+  - {fileID: 21300000, guid: 7870ab89fc00ec74ca3d8a4d6a46760a, type: 3}
+  - {fileID: 21300000, guid: 83ec97860cc0f094eb16f707919de900, type: 3}
+  - {fileID: 21300000, guid: 7ba073d42073e574791bf39eaef626fc, type: 3}
+  CorrectAnswer: 3

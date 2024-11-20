@@ -70,7 +70,8 @@ public class QuizManager : MonoBehaviour
         {
             options[i].GetComponent<Image>().color = options[i].GetComponent<AnswerScript>().startColor;
             options[i].GetComponent<AnswerScript>().isCorrect = false;
-            options[i].transform.GetChild(0).GetComponent<Text>().text = QnAs[currentQuestion].Answers[i];
+            // options[i].transform.GetChild(0).GetComponent<Text>().text = QnAs[currentQuestion].Answers[i];
+            options[i].transform.GetChild(0).GetComponent<Image>().sprite = QnAs[currentQuestion].Answers[i];
 
             // ArabicText arabicTextScript = options[i].transform.GetChild(0).GetComponent<ArabicText>();
             // arabicTextScript.Text = QnAs[currentQuestion].Answers[i];

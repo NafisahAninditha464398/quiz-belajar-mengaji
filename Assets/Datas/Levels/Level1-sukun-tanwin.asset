@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bdbb666b99cc04aa5870f558f3dc97, type: 3}
+  m_Name: Level1-sukun-tanwin
+  m_EditorClassIdentifier: 
+  levelId: 1
+  levelName: Level 1
+  QnAs:
+  - {fileID: 11400000, guid: 868fd6c7ea8851a449bcc899f96a958d, type: 2}
+  - {fileID: 11400000, guid: bf77b7caf3393924c8721c8dedf1fb47, type: 2}
+  - {fileID: 11400000, guid: 7fd34fc1efb03864c938f97c8b99fdcd, type: 2}
+  - {fileID: 11400000, guid: f18861c8705027c40a8f47f008fb9988, type: 2}
+  - {fileID: 11400000, guid: d1fcc4c39c8f97b4296776f9004b1e81, type: 2}
+  - {fileID: 11400000, guid: 8645a679a2d206b448f8329f993a4937, type: 2}
