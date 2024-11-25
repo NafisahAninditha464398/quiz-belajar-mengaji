@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         quizManager.LoadQuiz(section, level);
     }
 
-    public void GameOver(int score, int totalQuestions)
+    public void GameOver(int score, int totalQuestions, int correctAnswerCount, bool perfectLevel)
     {
         Debug.Log("GameOver");
 
@@ -129,7 +129,12 @@ public class GameManager : MonoBehaviour
         UnlockNextLevel(score);
 
         //Periksa apakah perlu update score
-        UpdateScore(score);
+        UpdateScore(score, perfectLevel);
+
+        //Achievement check
+        playerProgress.correctAnswerCount += correctAnswerCount;
+
+        achievementManager.CheckAchievementProgress(playerProgress.correctAnswerCount, playerProgress.perfectLevelCount, playerProgress.levelsUnlockedCount);
 
         // Simpan progres pemain
         playerProgress.PrepareForSave(playerProgress.unlockedSectionsList, playerProgress.unlockedSections);
@@ -166,6 +171,7 @@ public class GameManager : MonoBehaviour
                 if (!playerProgress.unlockedSections.Contains(nextSectionData.sectionId))
                 {
                     playerProgress.SetUnlockedSection(nextSectionData.sectionId);
+                    playerProgress.levelsUnlockedCount++;
                     Debug.Log($"Cek Add section: {playerProgress.IsSectionUnlocked(nextSectionData.sectionId)}");
                 }
 
@@ -203,11 +209,15 @@ public class GameManager : MonoBehaviour
         uiManager.ShowSectionPanel(allSections);
     }
 
-    public void UpdateScore(int score)
+    public void UpdateScore(int score, bool perfectLevel)
     {
         if (score > playerProgress.GetLevelHighScore(currentSection.sectionId, currentLevel.levelId))
         {
             playerProgress.UpdateLevelHighScore(currentSection.sectionId, currentLevel.levelId, score);
+            if (perfectLevel)
+            {
+                playerProgress.perfectLevelCount++;
+            }
             playerProgress.SaveProgress();
 
             Debug.Log($"Player Highscore Sekarang: {playerProgress.GetLevelHighScore(currentSection.sectionId, currentLevel.levelId)}");

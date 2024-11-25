@@ -8,5 +8,13 @@ public class AchievementData : ScriptableObject
     public string description;
     public bool isUnlocked;
     public Sprite icon; // Ikon yang ditampilkan saat achievement diraih
-    public int requiredCorrectAnswers;
+    public AchievementType achievementType;
+    public int required;
+}
+
+public enum AchievementType
+{
+    CorrectAnswerCount,
+    PerfectLevelCount,
+    LevelsUnlockedCount
 }

@@ -11,6 +11,10 @@ public class PlayerProgress : MonoBehaviour
     public HashSet<int> unlockedSections = new HashSet<int>();
     public List<int> unlockedSectionsList = new List<int>();
 
+    public int correctAnswerCount;
+    public int perfectLevelCount;
+    public int levelsUnlockedCount;
+
     [System.Serializable]
     public class SectionProgress
     {

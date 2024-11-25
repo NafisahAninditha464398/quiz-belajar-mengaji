@@ -16,14 +16,17 @@ public class QuizManager : MonoBehaviour
     private int currentQuestion;
 
     private int correctAnswerCount = 0;
+    private bool perfectLevel = false;
 
-    public event Action<int, int> OnQuizEnd;
+    public event Action<int, int, int, bool> OnQuizEnd;
 
 
     public void LoadQuiz(SectionData section, LevelData level)
     {
         displayedQuestions.Clear();
         score.score = 0;
+        correctAnswerCount = 0;
+        perfectLevel = false;
         //generate quiz
         if (section != null && level != null)
         {
@@ -59,8 +62,13 @@ public class QuizManager : MonoBehaviour
         {
             Debug.Log("Out of Questions");
             Debug.Log($"Jumlah pertanyaan: {displayedQuestions.Count}");
-            AchievementManager.Instance.CheckAchievementProgress(correctAnswerCount);
-            OnQuizEnd?.Invoke(score.GetScore(), totalQuestions); //event soal habis
+
+            if (totalQuestions == score.GetScore())
+            {
+                perfectLevel = true;
+            }
+
+            OnQuizEnd?.Invoke(score.GetScore(), totalQuestions, correctAnswerCount, perfectLevel); //event soal habis
         }
     }
 

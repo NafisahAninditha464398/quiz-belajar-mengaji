@@ -21,6 +21,10 @@ public class UIManager : MonoBehaviour
     public GameObject achievementPopUpPanel;
     public Image achievementBadge;
     public Transform achievementContainer;
+    public Text achievementNameText;
+    public Text descriptionText;
+    private Queue<AchievementData> achievementQueue = new Queue<AchievementData>();
+    private bool isDisplayingAchievementPopup = false;
 
     public GameObject achievementPanel;
     public GameObject achievementPrefab;
@@ -179,8 +183,45 @@ public class UIManager : MonoBehaviour
     public void ShowAchievementPopup(AchievementData achievement)
     {
         Debug.Log($"Achievement Unlocked: {achievement.achievementName}");
-        achievementPopUpPanel.SetActive(true);
-        achievementBadge.sprite = achievement.icon;
+        // achievementPopUpPanel.SetActive(true);
+        // achievementBadge.sprite = achievement.icon;
+
+        achievementQueue.Enqueue(achievement);
+        if (!isDisplayingAchievementPopup)
+        {
+            DisplayNextAchievement();
+        }
+    }
+
+    private void DisplayNextAchievement()
+    {
+        if (achievementQueue.Count > 0)
+        {
+            isDisplayingAchievementPopup = true;
+            AchievementData achievement = achievementQueue.Dequeue();
+            achievementNameText.text = achievement.achievementName;
+            descriptionText.text = achievement.description;
+            achievementBadge.sprite = achievement.icon;
+            achievementPopUpPanel.SetActive(true);
+        }
+        else
+        {
+            isDisplayingAchievementPopup = false;
+            achievementPopUpPanel.SetActive(false);
+        }
+    }
+
+    public void OnOkAchievementButtonPressed()
+    {
+        if (achievementQueue.Count > 0)
+        {
+            DisplayNextAchievement();
+        }
+        else
+        {
+            achievementPopUpPanel.SetActive(false);
+            isDisplayingAchievementPopup = false;
+        }
     }
 
     //dipanggil di button OnClick()

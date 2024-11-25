@@ -21,13 +21,38 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    public void CheckAchievementProgress(int correctAnswerCount)
+    // public void CheckAchievementProgress(int correctAnswerCount)
+    // {
+    //     foreach (var achievement in achievements)
+    //     {
+    //         if (!achievement.isUnlocked && correctAnswerCount >= achievement.requiredCorrectAnswers)
+    //         {
+    //             UnlockAchievement(achievement);
+    //         }
+    //     }
+    // }
+
+    public void CheckAchievementProgress(int correctAnswerCount, int perfectLevelCount, int levelsUnlockedCount)
     {
         foreach (var achievement in achievements)
         {
-            if (!achievement.isUnlocked && correctAnswerCount >= achievement.requiredCorrectAnswers)
+            if (!achievement.isUnlocked)
             {
-                UnlockAchievement(achievement);
+                if (achievement.achievementType.ToString() == "CorrectAnswerCount" && correctAnswerCount >= achievement.required)
+                {
+                    UnlockAchievement(achievement);
+                    Debug.Log($"achievement.requiredCorrectAnswers: {achievement.required},  achievement.achievementName: {achievement.achievementName})");
+                }
+                if (achievement.achievementType.ToString() == "PerfectLevelCount" && perfectLevelCount >= achievement.required)
+                {
+                    UnlockAchievement(achievement);
+                    Debug.Log($"achievement.requiredPerfectLevels: {achievement.required},  achievement.achievementName: {achievement.achievementName})");
+                }
+                if (achievement.achievementType.ToString() == "LevelsUnlockedCount" && levelsUnlockedCount + 1 >= achievement.required)
+                {
+                    UnlockAchievement(achievement);
+                    Debug.Log($"achievement.requiredLevelsUnlockes: {achievement.required},  achievement.achievementName: {achievement.achievementName})");
+                }
             }
         }
     }
