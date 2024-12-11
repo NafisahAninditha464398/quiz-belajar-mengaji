@@ -7,4 +7,5 @@ public class SectionData : ScriptableObject
     public int sectionId;
     public string sectionName;
     public List<LevelData> levels;
+    public Sprite sectionImage;
 }

@@ -15,6 +15,6 @@ MonoBehaviour:
   achievementName: Level Unlocked
   description: setelah bisa membuka 2 level
   isUnlocked: 1
-  icon: {fileID: 21300000, guid: b6750fb4bd7292346bd604385ac9c2a9, type: 3}
+  icon: {fileID: 21300000, guid: 6729cbf5912291d4dbcbb6da82141990, type: 3}
   achievementType: 2
   required: 1

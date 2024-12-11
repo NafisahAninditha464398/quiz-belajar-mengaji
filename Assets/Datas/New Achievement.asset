@@ -15,6 +15,6 @@ MonoBehaviour:
   achievementName: Correct Answer
   description: Bisa menjawab 2 soal betul
   isUnlocked: 1
-  icon: {fileID: 21300000, guid: 358f49c05dfdab644a1736e5ad56ce8b, type: 3}
+  icon: {fileID: 21300000, guid: 2cf1f9ad230e6b041a7e468bddb94e99, type: 3}
   achievementType: 0
   required: 1

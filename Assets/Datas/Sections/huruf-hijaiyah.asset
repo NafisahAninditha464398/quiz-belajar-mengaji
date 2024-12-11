@@ -16,3 +16,4 @@ MonoBehaviour:
   sectionName: Huruf Hijaiyah
   levels:
   - {fileID: 11400000, guid: b53837b9dee19ad4aa2f42956dae109d, type: 2}
+  sectionImage: {fileID: 21300000, guid: 421bbad7ebbb25b46a5eedad0c6522c3, type: 3}

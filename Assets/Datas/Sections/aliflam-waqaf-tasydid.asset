@@ -16,3 +16,4 @@ MonoBehaviour:
   sectionName: Alif Lam, Waqaf Tasydid
   levels:
   - {fileID: 11400000, guid: a475fe0d06ec66b4485b92430fcd6130, type: 2}
+  sectionImage: {fileID: 21300000, guid: baf17afae7b15c945beac3a1cf6fb658, type: 3}

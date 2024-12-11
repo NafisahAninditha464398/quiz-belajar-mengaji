@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject levelButtonPrefab; // Prefab untuk button level
     public Transform levelButtonContainer; // Tempat untuk menampung button
     public GameObject levelPanel; // Panel untuk menampilkan level
+    public Text sectionTextName;
 
     public GameObject gameoverPanel; // Panel pop up untuk menampilkan score
     public Text ScoreTxt;
@@ -124,8 +125,18 @@ public class UIManager : MonoBehaviour
             // Mengatur nama section di button
             button.GetComponentInChildren<Text>().text = section.sectionName;
 
+            //Mengatur image section di button
+            Transform borderImgTransform = button.transform.Find("border-img");
+            Transform transformImage = borderImgTransform.transform.Find("section-img");
+            Image targetImage = transformImage.GetComponentInChildren<Image>();
+            targetImage.sprite = section.sectionImage;
+
             // Memeriksa apakah section ini sudah terbuka menggunakan PlayerProgress
-            button.GetComponent<Button>().interactable = playerProgress.IsSectionUnlocked(section.sectionId);
+            bool sectionUnlock = playerProgress.IsSectionUnlocked(section.sectionId);
+            button.GetComponent<Button>().interactable = sectionUnlock;
+            Transform imgLock = button.transform.Find("lock-img");
+            imgLock.gameObject.SetActive(!sectionUnlock);
+
             Debug.Log($"apakah terbuka: {playerProgress.IsSectionUnlocked(section.sectionId)} di section ID: {section.sectionId}");
 
             // Menambahkan listener untuk button
@@ -137,6 +148,9 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log($"Section Level Ini: {section.sectionId}");
         // Bersihkan container level button sebelum mengisi ulang
+
+        sectionTextName.text = section.sectionName;
+
         foreach (Transform child in levelButtonContainer)
         {
             Destroy(child.gameObject);
@@ -239,6 +253,8 @@ public class UIManager : MonoBehaviour
     {
         achievementPanel.SetActive(true);
         List<AchievementData> achievements = AchievementManager.Instance.GetUnlockedAchievements();
+        ClearAchievementPanel();
+
         foreach (var achievement in achievements)
         {
             if (achievement.isUnlocked)
@@ -256,5 +272,13 @@ public class UIManager : MonoBehaviour
         GameObject achievementUI = Instantiate(achievementPrefab, achievementViewport);
         achievementUI.GetComponentInChildren<Text>().text = achievement.achievementName;
         achievementUI.GetComponentInChildren<Image>().sprite = achievement.icon;
+    }
+
+    private void ClearAchievementPanel()
+    {
+        foreach (Transform child in achievementViewport)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }
