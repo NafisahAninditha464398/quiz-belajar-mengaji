@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Cek inisialisasi: {playerProgress.IsLevelUnlocked(1, 1)}");
     }
 
+
     private void OnDisable()
     {
         uiManager.OnLevelSelected -= StartGame;

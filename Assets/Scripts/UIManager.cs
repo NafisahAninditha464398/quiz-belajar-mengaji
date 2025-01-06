@@ -43,8 +43,15 @@ public class UIManager : MonoBehaviour
     private PlayerProgress playerProgress;
     private PlayerInfoManager playerInfoManager;
 
+    AudioManager audioManager;
+
 
     // Setter untuk Dependency Injection
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     public void SetPlayerProgress(PlayerProgress progress)
     {
         playerProgress = progress;
@@ -122,6 +129,10 @@ public class UIManager : MonoBehaviour
             //Buat button baru dari prefab
             GameObject button = Instantiate(sectionButtonPrefab, sectionButtonContainer);
 
+            //Mengatur sfx button
+            Button buttonClick = button.GetComponent<Button>();
+            buttonClick.onClick.AddListener(() => audioManager.PlaySFX(audioManager.click));
+
             // Mengatur nama section di button
             button.GetComponentInChildren<Text>().text = section.sectionName;
 
@@ -162,11 +173,31 @@ public class UIManager : MonoBehaviour
             // Buat button baru dari prefab
             GameObject button = Instantiate(levelButtonPrefab, levelButtonContainer);
 
+            //Mengatur sfx button
+            Button buttonClick = button.GetComponent<Button>();
+            buttonClick.onClick.AddListener(() => audioManager.PlaySFX(audioManager.click));
+
             // Mengatur nama level di button
             button.GetComponentInChildren<Text>().text = level.levelName;
 
             // Memeriksa apakah level ini sudah terbuka menggunakan PlayerProgress
             button.GetComponent<Button>().interactable = playerProgress.IsLevelUnlocked(section.sectionId, level.levelId);
+
+            // Menmapilkan highscore
+            Text highscoreText = button.transform.GetChild(3).GetComponent<Text>(); //rawan
+            if (playerProgress != null)
+            {
+                highscoreText.text = playerProgress.GetLevelHighScore(section.sectionId, level.levelId).ToString();
+            }
+
+            // Menmapilkan progress
+            Slider progress = button.transform.GetChild(2).GetComponent<Slider>(); //rawan
+            if (playerProgress != null)
+            {
+                progress.value = (float)playerProgress.GetLevelHighScore(section.sectionId, level.levelId) / level.QnAs.Count;
+            }
+
+
 
             // Menambahkan listener untuk button
             button.GetComponent<Button>().onClick.AddListener(() => OnLevelButtonClicked(section, level));
@@ -192,10 +223,14 @@ public class UIManager : MonoBehaviour
         gamePanel.SetActive(false);
         gameoverPanel.SetActive(true);
         ScoreTxt.text = $"{score} / {totalQuestions}";
+
+        audioManager.PlaySFX(audioManager.endQuiz);
     }
 
     public void ShowAchievementPopup(AchievementData achievement)
     {
+        audioManager.PlaySFX(audioManager.achievement);
+
         Debug.Log($"Achievement Unlocked: {achievement.achievementName}");
         // achievementPopUpPanel.SetActive(true);
         // achievementBadge.sprite = achievement.icon;
@@ -211,6 +246,7 @@ public class UIManager : MonoBehaviour
     {
         if (achievementQueue.Count > 0)
         {
+            audioManager.PlaySFX(audioManager.achievement);
             isDisplayingAchievementPopup = true;
             AchievementData achievement = achievementQueue.Dequeue();
             achievementNameText.text = achievement.achievementName;
@@ -252,17 +288,15 @@ public class UIManager : MonoBehaviour
     public void ShowAchievementPanel()
     {
         achievementPanel.SetActive(true);
-        List<AchievementData> achievements = AchievementManager.Instance.GetUnlockedAchievements();
+        // List<AchievementData> achievementsUnlock = AchievementManager.Instance.GetUnlockedAchievements();
+        List<AchievementData> achievements = AchievementManager.Instance.GetAllAchievements();
         ClearAchievementPanel();
 
         foreach (var achievement in achievements)
         {
-            if (achievement.isUnlocked)
-            {
-                Debug.Log($"Achievement Sudah Unlocked: {achievement.achievementName}");
-                // Tampilkan achievement yang sudah unlock, misalnya melalui UI Manager
-                ShowUnlockedAchievement(achievement);
-            }
+            Debug.Log($"Achievement Sudah Unlocked: {achievement.achievementName}");
+            // Tampilkan achievement yang sudah unlock, misalnya melalui UI Manager
+            ShowUnlockedAchievement(achievement);
         }
     }
 
@@ -270,8 +304,26 @@ public class UIManager : MonoBehaviour
     {
         // Buat elemen UI atau update bagian UI khusus achievement
         GameObject achievementUI = Instantiate(achievementPrefab, achievementViewport);
-        achievementUI.GetComponentInChildren<Text>().text = achievement.achievementName;
+        achievementUI.GetComponentInChildren<Text>().text = "Terkunci";
         achievementUI.GetComponentInChildren<Image>().sprite = achievement.icon;
+        Image image = achievementUI.GetComponentInChildren<Image>();
+        Button achievementButton = achievementUI.GetComponent<Button>();
+        achievementButton.onClick.AddListener(() => audioManager.PlaySFX(audioManager.click));
+
+
+        Button descButton = achievementUI.transform.Find("Desc").GetComponent<Button>();
+        descButton.GetComponentInChildren<Text>().text = achievement.description;
+        descButton.onClick.AddListener(() => audioManager.PlaySFX(audioManager.click));
+
+        // Mengakses child dari Image
+        Transform childTransform = image.transform.GetChild(0); // Mendapatkan child pertama
+        GameObject childObject = childTransform.gameObject;
+        childObject.SetActive(true);
+        if (achievement.isUnlocked)
+        {
+            achievementUI.GetComponentInChildren<Text>().text = achievement.achievementName;
+            childObject.SetActive(false);
+        }
     }
 
     private void ClearAchievementPanel()

@@ -92,5 +92,9 @@ public class AchievementManager : MonoBehaviour
         }
         return unlockedAchievements;
     }
+    public List<AchievementData> GetAllAchievements()
+    {
+        return achievements;
+    }
 
 }

@@ -7,6 +7,7 @@ public class AnswerScript : MonoBehaviour
     public bool isCorrect = false;
     public Color startColor;
     public QuizManager quizManager;
+    public AudioManager audio;
 
     private void Start()
     {
@@ -20,12 +21,16 @@ public class AnswerScript : MonoBehaviour
             GetComponent<Image>().color = Color.green;
             Debug.Log("Correct Answer");
             quizManager.Correct();
+
+            audio.PlaySFX(audio.right);
         }
         else
         {
             GetComponent<Image>().color = Color.red;
             Debug.Log("Wrong Answer");
             quizManager.Wrong();
+
+            audio.PlaySFX(audio.wrong);
         }
     }
 }

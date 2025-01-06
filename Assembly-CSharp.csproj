@@ -41,10 +41,12 @@
      <Compile Include="Assets\Scripts\QuizManager.cs" />
      <Compile Include="Assets\Scripts\AnswerScript.cs" />
      <Compile Include="Assets\Scripts\Data\AchievementData.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
      <Compile Include="Assets\Scripts\AchievementManager.cs" />
      <Compile Include="Assets\Scripts\Data\SectionData.cs" />
      <Compile Include="Assets\Scripts\Data\PlayerProgress.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
+     <Compile Include="Assets\Scripts\ExitScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Data\QnA.cs" />
      <Compile Include="Assets\Scripts\ScoreScript.cs" />

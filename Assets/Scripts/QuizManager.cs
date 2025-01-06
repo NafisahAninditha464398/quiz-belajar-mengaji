@@ -74,6 +74,7 @@ public class QuizManager : MonoBehaviour
 
     void SetAnswers()
     {
+        SetButtonsInteractable(true);
         for (int i = 0; i < options.Length; i++)
         {
             options[i].GetComponent<Image>().color = options[i].GetComponent<AnswerScript>().startColor;
@@ -96,11 +97,21 @@ public class QuizManager : MonoBehaviour
     {
         score.AddScore();
         correctAnswerCount++;
+        SetButtonsInteractable(false);
         StartCoroutine(WaitForNext());
     }
 
     public void Wrong()
     {
+        SetButtonsInteractable(false);
         StartCoroutine(WaitForNext());
+    }
+
+    public void SetButtonsInteractable(bool isInteractable)
+    {
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[i].GetComponent<Button>().interactable = isInteractable;
+        }
     }
 }
