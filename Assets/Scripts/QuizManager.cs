@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,9 @@ public class QuizManager : MonoBehaviour
     private bool perfectLevel = false;
 
     public event Action<int, int, int, bool> OnQuizEnd;
+
+    public Color correctColor;
+    public Color wrongColor;
 
 
     public void LoadQuiz(SectionData section, LevelData level)
@@ -104,6 +108,10 @@ public class QuizManager : MonoBehaviour
     public void Wrong()
     {
         SetButtonsInteractable(false);
+        for (int i = 0; i < options.Length; i++)
+        {
+            options[QnAs[currentQuestion].CorrectAnswer - 1].GetComponent<Image>().color = correctColor;
+        }
         StartCoroutine(WaitForNext());
     }
 

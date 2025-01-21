@@ -18,7 +18,7 @@ public class AnswerScript : MonoBehaviour
     {
         if (isCorrect)
         {
-            GetComponent<Image>().color = Color.green;
+            GetComponent<Image>().color = quizManager.correctColor;
             Debug.Log("Correct Answer");
             quizManager.Correct();
 
@@ -26,7 +26,7 @@ public class AnswerScript : MonoBehaviour
         }
         else
         {
-            GetComponent<Image>().color = Color.red;
+            GetComponent<Image>().color = quizManager.wrongColor;
             Debug.Log("Wrong Answer");
             quizManager.Wrong();
 

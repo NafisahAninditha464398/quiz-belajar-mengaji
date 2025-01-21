@@ -17,4 +17,4 @@ MonoBehaviour:
   isUnlocked: 1
   icon: {fileID: 21300000, guid: 6729cbf5912291d4dbcbb6da82141990, type: 3}
   achievementType: 2
-  required: 1
+  required: 2
