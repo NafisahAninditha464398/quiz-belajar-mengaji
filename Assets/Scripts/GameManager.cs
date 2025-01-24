@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
         // Menghubungkan event dari UIManager ke GameManager
         uiManager.OnLevelSelected += StartGame;
         quizManager.OnQuizEnd += GameOver;
-        achievementManager.OnAchievementUnlock += uiManager.ShowAchievementPopup;
+        // achievementManager.OnAchievementUnlock += uiManager.ShowAchievementPopup;
+        achievementManager.OnAchievementUnlock += uiManager.AddAchievementPopup;
         uiManager.OnOkButtonPressed += ProceedToNextLevel;
         uiManager.OnBackButtonPressed += BackToMenu;
     }
@@ -72,7 +73,8 @@ public class GameManager : MonoBehaviour
     {
         uiManager.OnLevelSelected -= StartGame;
         quizManager.OnQuizEnd -= GameOver;
-        achievementManager.OnAchievementUnlock -= uiManager.ShowAchievementPopup;
+        // achievementManager.OnAchievementUnlock -= uiManager.ShowAchievementPopup;
+        achievementManager.OnAchievementUnlock += uiManager.AddAchievementPopup;
         uiManager.OnOkButtonPressed -= ProceedToNextLevel;
         uiManager.OnBackButtonPressed -= BackToMenu;
     }

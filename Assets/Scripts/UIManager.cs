@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     public Text achievementNameText;
     public Text descriptionText;
     private Queue<AchievementData> achievementQueue = new Queue<AchievementData>();
-    private bool isDisplayingAchievementPopup = false;
+    // private bool isDisplayingAchievementPopup = false;
 
     public GameObject achievementPanel;
     public GameObject achievementPrefab;
@@ -181,7 +181,10 @@ public class UIManager : MonoBehaviour
             button.GetComponentInChildren<Text>().text = level.levelName;
 
             // Memeriksa apakah level ini sudah terbuka menggunakan PlayerProgress
-            button.GetComponent<Button>().interactable = playerProgress.IsLevelUnlocked(section.sectionId, level.levelId);
+            bool levelUnlock = playerProgress.IsLevelUnlocked(section.sectionId, level.levelId);
+            button.GetComponent<Button>().interactable = levelUnlock;
+            Transform imgLock = button.transform.Find("lock-img");
+            imgLock.gameObject.SetActive(!levelUnlock);
 
             // Menmapilkan highscore
             Text highscoreText = button.transform.GetChild(3).GetComponent<Text>(); //rawan
@@ -220,6 +223,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowScorePanel(int score, int totalQuestions)
     {
+        // isDisplayingScorePopup = true;
         gamePanel.SetActive(false);
         gameoverPanel.SetActive(true);
         ScoreTxt.text = $"{score} / {totalQuestions}";
@@ -227,19 +231,10 @@ public class UIManager : MonoBehaviour
         audioManager.PlaySFX(audioManager.endQuiz);
     }
 
-    public void ShowAchievementPopup(AchievementData achievement)
+    public void AddAchievementPopup(AchievementData achievement) //ShowAchievementPopup
     {
-        audioManager.PlaySFX(audioManager.achievement);
-
         Debug.Log($"Achievement Unlocked: {achievement.achievementName}");
-        // achievementPopUpPanel.SetActive(true);
-        // achievementBadge.sprite = achievement.icon;
-
         achievementQueue.Enqueue(achievement);
-        if (!isDisplayingAchievementPopup)
-        {
-            DisplayNextAchievement();
-        }
     }
 
     private void DisplayNextAchievement()
@@ -247,7 +242,7 @@ public class UIManager : MonoBehaviour
         if (achievementQueue.Count > 0)
         {
             audioManager.PlaySFX(audioManager.achievement);
-            isDisplayingAchievementPopup = true;
+            // isDisplayingAchievementPopup = true;
             AchievementData achievement = achievementQueue.Dequeue();
             achievementNameText.text = achievement.achievementName;
             descriptionText.text = achievement.description;
@@ -256,7 +251,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            isDisplayingAchievementPopup = false;
+            // isDisplayingAchievementPopup = false;
             achievementPopUpPanel.SetActive(false);
         }
     }
@@ -270,13 +265,17 @@ public class UIManager : MonoBehaviour
         else
         {
             achievementPopUpPanel.SetActive(false);
-            isDisplayingAchievementPopup = false;
+            // isDisplayingAchievementPopup = false;
         }
     }
 
     //dipanggil di button OnClick()
     public void HandleOkButtonClick()
     {
+        if (achievementQueue.Count > 0)
+        {
+            DisplayNextAchievement();
+        }
         OnOkButtonPressed?.Invoke();
     }
 
