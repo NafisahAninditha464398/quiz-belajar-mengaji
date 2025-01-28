@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2bdbb666b99cc04aa5870f558f3dc97, type: 3}
   m_Name: dummy2
   m_EditorClassIdentifier: 
-  levelId: 0
-  levelName: 
-  QnAs: []
+  levelId: 2
+  levelName: Level 2
+  QnAs:
+  - {fileID: 11400000, guid: 9354ff7b17062eb4585107a932a82303, type: 2}
