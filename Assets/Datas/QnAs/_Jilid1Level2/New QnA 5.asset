@@ -16,7 +16,7 @@ MonoBehaviour:
   QuestionDesc: huruf hijaiyah
   Answers:
   - {fileID: 21300000, guid: 49906f94dfd92bd4b99ca5fe3bf613b9, type: 3}
-  - {fileID: 21300000, guid: 1b53cd4afa52e4447a6eefecbd5455e8, type: 3}
+  - {fileID: 21300000, guid: a875e2c9422e06b47befd8fac554bfbd, type: 3}
   - {fileID: 21300000, guid: b9947763fe98a8c4c976eb443c7483b4, type: 3}
   - {fileID: 21300000, guid: 377894b595c02f4468fea0e647bb529b, type: 3}
   CorrectAnswer: 3
