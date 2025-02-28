@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 2-WUU
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C WUU \u201D ?"
+  QuestionDesc: Mad Asli
+  Answers:
+  - {fileID: 21300000, guid: 431f69f144a686e4eb2a1350231d307c, type: 3}
+  - {fileID: 21300000, guid: d0508676bb3e1fc4c8cd20e181eff3c7, type: 3}
+  - {fileID: 21300000, guid: 7a596cd254113d147ac44c1820ed139c, type: 3}
+  - {fileID: 21300000, guid: 8a0afc1e6eb68fb478608d4f99fab31c, type: 3}
+  CorrectAnswer: 4

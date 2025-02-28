@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 3-SYAHIDA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C SYA - HI - DA \u201D?"
+  QuestionDesc: Harakat
+  Answers:
+  - {fileID: 21300000, guid: 7c6baebc65544e24a942200d0da6f5e3, type: 3}
+  - {fileID: 21300000, guid: 78d60701878b9bd4bb54d9a2c5f3cbda, type: 3}
+  - {fileID: 21300000, guid: d42fc0b87bda6b14c84420bdeaead611, type: 3}
+  - {fileID: 21300000, guid: bb845924424a05c4cb5077f9b57a3045, type: 3}
+  CorrectAnswer: 3

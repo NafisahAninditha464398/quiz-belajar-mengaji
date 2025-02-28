@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcbb487b44b8cd141a134e442ddf5dc6, type: 3}
+  m_Name: Jilid3
+  m_EditorClassIdentifier: 
+  sectionId: 3
+  sectionName: Jilid 3
+  levels:
+  - {fileID: 11400000, guid: 17726e130c9147a41ade31f4852ff564, type: 2}
+  - {fileID: 11400000, guid: 3879e331fda9c0541aca0d9f345870a2, type: 2}
+  - {fileID: 11400000, guid: 1a11894e059f772479b90ba5af97e824, type: 2}
+  - {fileID: 11400000, guid: 7b385a2b401f8e345904884944a5e844, type: 2}
+  sectionImage: {fileID: 21300000, guid: 265c739b0d2af0f4b9c1a976d1bf9458, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-QOOLABALAA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C QOO - LA - BA - LAA \u201D?"
+  QuestionDesc: Alif Masqurah
+  Answers:
+  - {fileID: 21300000, guid: 79406751f5dc3694cb627a45c1bfe623, type: 3}
+  - {fileID: 21300000, guid: 26715a8d7394d2d4688dece3db3c8eb3, type: 3}
+  - {fileID: 21300000, guid: 2161d403359a03149bf1416acf6dd0ff, type: 3}
+  - {fileID: 21300000, guid: 6436e54aa2badad45bf9a3cf13590ea3, type: 3}
+  CorrectAnswer: 4

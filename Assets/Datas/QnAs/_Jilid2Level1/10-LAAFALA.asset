@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-LAAFALA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C LA - A - FA - LA \u201D?"
+  QuestionDesc: Huruf Terangkai
+  Answers:
+  - {fileID: 21300000, guid: d6eba6616fc58ef4b8d576064e0a5990, type: 3}
+  - {fileID: 21300000, guid: 113ed580781a3a541b7e5d8e9de0dc6e, type: 3}
+  - {fileID: 21300000, guid: 2080273af06a9df4d9160dff87548e22, type: 3}
+  - {fileID: 21300000, guid: d76871ea6a908ae4d9fc0e430b57c9c5, type: 3}
+  CorrectAnswer: 1

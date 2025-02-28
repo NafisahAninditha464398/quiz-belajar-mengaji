@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 3-LISA'YIHAAROODHIYAH
+  m_EditorClassIdentifier: 
+  Question: "Saat waqaf ta\u2019 marbutah menjadi sukun dan dibaca h. Manakah yang
+    dibaca \u201C LI - SA' - YI - HAA - ROO - DHI - YAH \u201D?"
+  QuestionDesc: Waqaf I
+  Answers:
+  - {fileID: 21300000, guid: a2242b3f6820c81478fe15ca8d46bee1, type: 3}
+  - {fileID: 21300000, guid: e4fbc8fa1730bea45892a84259494d5a, type: 3}
+  - {fileID: 21300000, guid: bd190c6ecd7147f4e95961313ac413ff, type: 3}
+  - {fileID: 21300000, guid: 7b42e85a5d2489341a2e831db9ffb268, type: 3}
+  CorrectAnswer: 2

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 3-KADZAALIKA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C KA - DZAA - LI - KA \u201D?"
+  QuestionDesc: Simbol Dua Harakat
+  Answers:
+  - {fileID: 21300000, guid: 5a19abcd199c4d148be3e946d2b4313b, type: 3}
+  - {fileID: 21300000, guid: 353488b209032ae4889435bd8caa0e9d, type: 3}
+  - {fileID: 21300000, guid: 9df8d8b364613294aa15ad5eb7ef56f3, type: 3}
+  - {fileID: 21300000, guid: 210b5aed4d74f684bb6130d48ae7a5ea, type: 3}
+  CorrectAnswer: 4

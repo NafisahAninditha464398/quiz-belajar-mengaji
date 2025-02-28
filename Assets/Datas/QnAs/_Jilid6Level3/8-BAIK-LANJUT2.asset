@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 8-BAIK-LANJUT2
+  m_EditorClassIdentifier: 
+  Question: Jika melihat tanda waqaf ini artinya lanjut lebih utama?
+  QuestionDesc: Tanda Waqaf
+  Answers:
+  - {fileID: 21300000, guid: 318601f3b5606b54b8cef10dede90198, type: 3}
+  - {fileID: 21300000, guid: b572882d814bb404faf40bbb3fe42c58, type: 3}
+  - {fileID: 21300000, guid: 08d74bac8bd841a4aaeea3d9e4e22d26, type: 3}
+  - {fileID: 21300000, guid: 852d42819736b3f4ebf093b0ad2a4576, type: 3}
+  CorrectAnswer: 2

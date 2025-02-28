@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: New QnA 1
+  m_EditorClassIdentifier: 
+  Question: SA
+  QuestionDesc: huruf hijaiyah
+  Answers:
+  - {fileID: 21300000, guid: 49906f94dfd92bd4b99ca5fe3bf613b9, type: 3}
+  - {fileID: 21300000, guid: 1b53cd4afa52e4447a6eefecbd5455e8, type: 3}
+  - {fileID: 21300000, guid: a0d3d479f83b006498ac8161782d4e5b, type: 3}
+  - {fileID: 21300000, guid: 9eeb4971a95930f499c6770e128a31a9, type: 3}
+  CorrectAnswer: 4

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 3-YASUUFUUNA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C YA - SUU - FUU - NA \u201D?"
+  QuestionDesc: Mad Asli
+  Answers:
+  - {fileID: 21300000, guid: e761016d0a8e53143868ef5176b328f7, type: 3}
+  - {fileID: 21300000, guid: e60bf3fe758d11342825888727bf9029, type: 3}
+  - {fileID: 21300000, guid: c104eb61f7d0d6a409b738ce70e8312e, type: 3}
+  - {fileID: 21300000, guid: 5f1cb72aa6f15e34ea45be809d5d9610, type: 3}
+  CorrectAnswer: 2

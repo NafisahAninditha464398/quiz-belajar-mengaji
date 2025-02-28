@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 5-BAARIDIWWALAA
+  m_EditorClassIdentifier: 
+  Question: "Mana \u201Cnun sukun\u201D atau \u201Ctanwin\u201D yang lebur dan masuk
+    ke huruf pada kata berikutnya dengan dengung?"
+  QuestionDesc: Idgham Bigunnah
+  Answers:
+  - {fileID: 21300000, guid: 8c5e158b5b6b7324597d998326ef4ad9, type: 3}
+  - {fileID: 21300000, guid: 8282df87afe881a46b9a4a7bbdff2c84, type: 3}
+  - {fileID: 21300000, guid: f8e151d3f3484244b9da528c0f39b5d7, type: 3}
+  - {fileID: 21300000, guid: 28094b15f40cea3429c2d9ac4abaf043, type: 3}
+  CorrectAnswer: 1

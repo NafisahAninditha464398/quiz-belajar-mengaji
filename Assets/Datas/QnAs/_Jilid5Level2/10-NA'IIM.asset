@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-NA'IIM
+  m_EditorClassIdentifier: 
+  Question: "Tanwin hilang saat waqaf, manakah yang dibaca \u201C NA - \u2019IIM
+    \u201D ?"
+  QuestionDesc: Waqaf I
+  Answers:
+  - {fileID: 21300000, guid: 6fb70b95183ff794cbea07a81b97dcf2, type: 3}
+  - {fileID: 21300000, guid: 3daa9b0e3e54a394aa96124ff4265b60, type: 3}
+  - {fileID: 21300000, guid: a48e1915e1041214591102753e1b99cb, type: 3}
+  - {fileID: 21300000, guid: 2d029340c12bb6f4bb90b649c44aef41, type: 3}
+  CorrectAnswer: 1

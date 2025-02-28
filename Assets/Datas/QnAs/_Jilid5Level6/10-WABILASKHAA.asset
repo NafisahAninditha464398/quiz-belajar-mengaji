@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-WABILASKHAA
+  m_EditorClassIdentifier: 
+  Question: "Manakah alif lam yang huruf \u201Clam\u201D nya dibaca?"
+  QuestionDesc: Alif Lam
+  Answers:
+  - {fileID: 21300000, guid: 748d11cbe760ee045b384971dcd4b6ec, type: 3}
+  - {fileID: 21300000, guid: 7242cb5bee06f3c4bbb5e638216e2e98, type: 3}
+  - {fileID: 21300000, guid: 7e3733a76af7209469c43eeb3a51c0f2, type: 3}
+  - {fileID: 21300000, guid: 9ed4ae8946984c04c82d286597980ecd, type: 3}
+  CorrectAnswer: 3

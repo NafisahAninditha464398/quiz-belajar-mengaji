@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 2-'AAMILATUNNAASHIBAH
+  m_EditorClassIdentifier: 
+  Question: "Saat \u201Ctanwin\u201D atau \u201Cnun sukun\u201D bertemu \u201Cnun\u201D
+    atau \u201Cmim\u201D maka akan berdengung, manakah kata yang dibaca dengan dengung? "
+  QuestionDesc: Idgham
+  Answers:
+  - {fileID: 21300000, guid: 03e721fd860f7374ba4bd27a2ab66264, type: 3}
+  - {fileID: 21300000, guid: ae1673afd1f6e2b42a20ae4a83435955, type: 3}
+  - {fileID: 21300000, guid: 5301160a1b3dc9e42ba93ff7fea8bedb, type: 3}
+  - {fileID: 21300000, guid: 74acade354822b54998d4c3c99ff31cd, type: 3}
+  CorrectAnswer: 1

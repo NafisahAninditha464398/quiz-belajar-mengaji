@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 9-TSALAATSAH
+  m_EditorClassIdentifier: 
+  Question: "Saat waqaf ta\u2019 marbutah menjadi sukun dan dibaca h. Manakah yang
+    dibaca \u201C TSA - LAA - TSAH \u201D ?"
+  QuestionDesc: Waqaf I
+  Answers:
+  - {fileID: 21300000, guid: 45638546b6fa27c468c06abf088ecc2d, type: 3}
+  - {fileID: 21300000, guid: d7942f2911a09d447a65b91254f8ab62, type: 3}
+  - {fileID: 21300000, guid: 81d6ed2a99434224a8c7cac5a52023a7, type: 3}
+  - {fileID: 21300000, guid: 39a9ed086f8a0cb46b3ed593358fc0c2, type: 3}
+  CorrectAnswer: 4

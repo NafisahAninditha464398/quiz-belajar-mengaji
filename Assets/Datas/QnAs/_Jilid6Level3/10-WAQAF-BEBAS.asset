@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-WAQAF-BEBAS
+  m_EditorClassIdentifier: 
+  Question: Jika melihat tanda waqaf ini artinya kita boleh berhenti dan boleh lanjut?
+  QuestionDesc: Tanda Waqaf
+  Answers:
+  - {fileID: 21300000, guid: 792905229a679a441a0ef6f9c798a89f, type: 3}
+  - {fileID: 21300000, guid: bcdc997a61f02a649b3833d10666146a, type: 3}
+  - {fileID: 21300000, guid: f383fe97254836848bf6fa102c1f05f0, type: 3}
+  - {fileID: 21300000, guid: 00272dfcc906de64d9a4d8538310dadc, type: 3}
+  CorrectAnswer: 2

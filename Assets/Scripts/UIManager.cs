@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject gameoverPanel; // Panel pop up untuk menampilkan score
     public Text ScoreTxt;
+    public Text TextJumlahBenar;
+    public Text TextJumlahSalah;
 
     public GameObject achievementPopUpPanel;
     public Image achievementBadge;
@@ -227,6 +229,8 @@ public class UIManager : MonoBehaviour
         gamePanel.SetActive(false);
         gameoverPanel.SetActive(true);
         ScoreTxt.text = $"{score} / {totalQuestions}";
+        TextJumlahBenar.text = $"{score}";
+        TextJumlahSalah.text = $"{totalQuestions - score}";
 
         audioManager.PlaySFX(audioManager.endQuiz);
     }

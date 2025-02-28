@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 9-HATSIIMAN
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C HA - TSII - MAN \u201D ?"
+  QuestionDesc: Tanwin
+  Answers:
+  - {fileID: 21300000, guid: ba6455ce9dd023a4eab9bca29175092a, type: 3}
+  - {fileID: 21300000, guid: 922cf539c63beba44b0f2f60d34e7685, type: 3}
+  - {fileID: 21300000, guid: 6c27fba97d638d0458a292d7e44f8d5a, type: 3}
+  - {fileID: 21300000, guid: 35f4f4bc3c8f64a4ab2dda832a3cf5b5, type: 3}
+  CorrectAnswer: 1

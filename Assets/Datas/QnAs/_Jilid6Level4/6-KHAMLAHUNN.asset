@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 6-KHAMLAHUNN
+  m_EditorClassIdentifier: 
+  Question: Saat ingin berhenti pada nun bertasydid, suara berdengung, seperti pada?
+  QuestionDesc: Waqaf II
+  Answers:
+  - {fileID: 21300000, guid: f9650a0a99f548e4ebe0e7c97bfe437e, type: 3}
+  - {fileID: 21300000, guid: 3e3a541646d798c459616fc5ef10024f, type: 3}
+  - {fileID: 21300000, guid: 6fba14a3fbcbfce439fa840228455169, type: 3}
+  - {fileID: 21300000, guid: bada68fa52106004dabe04636a4e060a, type: 3}
+  CorrectAnswer: 4

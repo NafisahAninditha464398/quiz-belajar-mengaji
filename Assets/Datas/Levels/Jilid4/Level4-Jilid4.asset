@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bdbb666b99cc04aa5870f558f3dc97, type: 3}
+  m_Name: Level4-Jilid4
+  m_EditorClassIdentifier: 
+  levelId: 4
+  levelName: Level 4
+  QnAs:
+  - {fileID: 11400000, guid: 8645a679a2d206b448f8329f993a4937, type: 2}
+  - {fileID: 11400000, guid: 98f182ba67010ac46882939ffadae396, type: 2}
+  - {fileID: 11400000, guid: e15928daa7b37484b93f2d68796e8f92, type: 2}
+  - {fileID: 11400000, guid: b13b5850f683658458af6afb7adf1ec1, type: 2}
+  - {fileID: 11400000, guid: 346554761b65688428d1266a8da5b405, type: 2}
+  - {fileID: 11400000, guid: 15c3b374211949c49a9166d9d306878c, type: 2}
+  - {fileID: 11400000, guid: 4bcb2f716a7d74546954744d0b8e2f38, type: 2}
+  - {fileID: 11400000, guid: 127054d5ef31505438607fdba09c8575, type: 2}
+  - {fileID: 11400000, guid: 3cdadce39598b924f9282350edb5db89, type: 2}
+  - {fileID: 11400000, guid: 2047324570b42414586808e7a0591ed1, type: 2}

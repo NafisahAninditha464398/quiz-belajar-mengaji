@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 6-DLOROYATAA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C DLO - RO - YA - TAA \u201D? "
+  QuestionDesc: Mad Asli Alif
+  Answers:
+  - {fileID: 21300000, guid: cd28dfa23e4b9fa47b4a01d4141b993f, type: 3}
+  - {fileID: 21300000, guid: 4319f6815ca741040a51e0c7f4d7227b, type: 3}
+  - {fileID: 21300000, guid: a724b14f2cff493418d859915c430403, type: 3}
+  - {fileID: 21300000, guid: 3131f35e3f6bd9746b9b8b0cad2b3f04, type: 3}
+  CorrectAnswer: 2

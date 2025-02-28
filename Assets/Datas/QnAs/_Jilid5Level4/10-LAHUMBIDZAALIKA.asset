@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-LAHUMBIDZAALIKA
+  m_EditorClassIdentifier: 
+  Question: "\u201CMim sukun\u201D bertemu \u201Cba\u201D dibaca dengung, yang manakah
+    itu?"
+  QuestionDesc: Ikhfa Syafawi
+  Answers:
+  - {fileID: 21300000, guid: d55a48f09351907449b15432949c1a93, type: 3}
+  - {fileID: 21300000, guid: f0d7c73a578287743a7ecdbfc12e35f6, type: 3}
+  - {fileID: 21300000, guid: afcde2f216beb23449e5cdb7cae9ee20, type: 3}
+  - {fileID: 21300000, guid: a454dcbc234c693499b62823f12854ec, type: 3}
+  CorrectAnswer: 2

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 4-BADDALA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C BAD - DA - LA \u201D?"
+  QuestionDesc: Ghunnah Wajib
+  Answers:
+  - {fileID: 21300000, guid: 769b3cfd71a274e4498752a6203c6153, type: 3}
+  - {fileID: 21300000, guid: ec8eaafffb63333449dc6e17b89b54eb, type: 3}
+  - {fileID: 21300000, guid: 120bd820cb79b7f4395e942fcb4d54f6, type: 3}
+  - {fileID: 21300000, guid: a15f1cc7b44475a4baa3dcdbe3db75f4, type: 3}
+  CorrectAnswer: 3

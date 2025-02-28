@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 1-FANHAARA
+  m_EditorClassIdentifier: 
+  Question: "Suara \"n\" dari \u201Cnun sukun\u201D atau tanwin dibaca samar dan
+    dengung saat bertemu huruf ikhfa\u2019, ada 15 huruf ikhfa' mana yang bukan?"
+  QuestionDesc: Ikhfa
+  Answers:
+  - {fileID: 21300000, guid: 7eee46b76f3ccc04a9f5466864a1775f, type: 3}
+  - {fileID: 21300000, guid: e577861e61f69d547abd47681a1f8eed, type: 3}
+  - {fileID: 21300000, guid: 10fc5f8132eeab242af4e627aa5f577b, type: 3}
+  - {fileID: 21300000, guid: 00cc61126016bd9498f5c5a8cdd31401, type: 3}
+  CorrectAnswer: 1

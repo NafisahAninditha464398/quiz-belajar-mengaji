@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-ARDLII
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C AR - DLII \u201D ?"
+  QuestionDesc: Sukun Konsonan
+  Answers:
+  - {fileID: 21300000, guid: 67734f6fbea7e8741bf2e9e9b65ea71a, type: 3}
+  - {fileID: 21300000, guid: 0de6cd06e9c443f4797facaf0c0b2bae, type: 3}
+  - {fileID: 21300000, guid: 4aa63d56a794a134ca66084c470aad53, type: 3}
+  - {fileID: 21300000, guid: cbaa1e2e6cca0f14ab3e7cbf1e3a1f7f, type: 3}
+  CorrectAnswer: 1

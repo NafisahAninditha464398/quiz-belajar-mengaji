@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 9-NASHIIBAAMMAFRUUDLOO
+  m_EditorClassIdentifier: 
+  Question: "Jika waqaf, \u201Can\u201D dibaca \u201Caa\u201D (2 harakat), seperti
+    pada?"
+  QuestionDesc: Waqaf II
+  Answers:
+  - {fileID: 21300000, guid: a5d22adb79ec03241a8570b10ab70f30, type: 3}
+  - {fileID: 21300000, guid: 817d2f2fcfba45345bc2510a9ef0f541, type: 3}
+  - {fileID: 21300000, guid: 4149b60b0e0f90c4391e04bb5cbe3557, type: 3}
+  - {fileID: 21300000, guid: 5eb237cba1d548745b3d7a2cd13acdb9, type: 3}
+  CorrectAnswer: 3

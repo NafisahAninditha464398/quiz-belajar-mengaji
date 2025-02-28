@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 3-INNAHAA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C IN - NA - HAA \u201D?"
+  QuestionDesc: Ghunnah Wajib
+  Answers:
+  - {fileID: 21300000, guid: a1f64a7bea218ae418c4301875a77dbb, type: 3}
+  - {fileID: 21300000, guid: 3957b79e84dd4a14bbcdd83b94a2d9e9, type: 3}
+  - {fileID: 21300000, guid: eb39839ca3edbee4ca9a5897749d5f14, type: 3}
+  - {fileID: 21300000, guid: aec016aea53e399498d2349749d86807, type: 3}
+  CorrectAnswer: 4

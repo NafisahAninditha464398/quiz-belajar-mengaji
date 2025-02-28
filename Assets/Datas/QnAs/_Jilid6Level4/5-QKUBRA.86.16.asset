@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 5-QKUBRA.86.16
+  m_EditorClassIdentifier: 
+  Question: Huruf qolqolah bertasydid jika diwaqafkan dibaca dengan ditekan dan ditahan
+    2 harakat dan diikuti qalqalahnya yang manakah itu?
+  QuestionDesc: Waqaf II
+  Answers:
+  - {fileID: 21300000, guid: 6bcbc82f9d4f6f949b869f4bb270b102, type: 3}
+  - {fileID: 21300000, guid: cfa822065e14fb44ebc09e1e602ebde2, type: 3}
+  - {fileID: 21300000, guid: 2487f83b01cb52a44b2658ce49afd68d, type: 3}
+  - {fileID: 21300000, guid: 9833fe9660b305f49941f22cde67141a, type: 3}
+  CorrectAnswer: 2

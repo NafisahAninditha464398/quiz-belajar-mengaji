@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 9-WATSAAQOHUU
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C WA - TSAA - QO - HUU \u201D ?"
+  QuestionDesc: Simbol Dua Harakat
+  Answers:
+  - {fileID: 21300000, guid: b4b44253d24afc84da53a161b4724c27, type: 3}
+  - {fileID: 21300000, guid: 5709cbb828e446b479ec4fa66dd89f97, type: 3}
+  - {fileID: 21300000, guid: c69e6c9f8306476479c00fc86435f0cc, type: 3}
+  - {fileID: 21300000, guid: d5d6e2006707abe47be6d2a36a1ca8d2, type: 3}
+  CorrectAnswer: 4

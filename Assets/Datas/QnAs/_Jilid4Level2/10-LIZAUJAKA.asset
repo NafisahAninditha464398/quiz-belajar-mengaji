@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-LIZAUJAKA
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C LI - ZA - U - JA - KA  \u201D ?"
+  QuestionDesc: Sukun Vokal
+  Answers:
+  - {fileID: 21300000, guid: 0a20cb657d2cf8f42a155d8a1c6f4634, type: 3}
+  - {fileID: 21300000, guid: 194a41650b287aa45af619fbbfb5f8f1, type: 3}
+  - {fileID: 21300000, guid: b2ac882a6089e4e4da1be8f05090faba, type: 3}
+  - {fileID: 21300000, guid: 0c97556c8fcd3cb4685a8275b8f3f628, type: 3}
+  CorrectAnswer: 1

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 7-GHOFUURUN
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C GHO - FUU - RUN \u201D ?"
+  QuestionDesc: Tanwin
+  Answers:
+  - {fileID: 21300000, guid: 0afe5a76085a98242b3538a6b95d3df2, type: 3}
+  - {fileID: 21300000, guid: af58abd79c4dc1e4cbb5b9d2a45202be, type: 3}
+  - {fileID: 21300000, guid: acd9f828faf9b10479417c325a8f95d6, type: 3}
+  - {fileID: 21300000, guid: 5c081dc5d41d3544e9667ca87113d857, type: 3}
+  CorrectAnswer: 3

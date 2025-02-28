@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 2-'ALAAAAATSAARIHIM
+  m_EditorClassIdentifier: 
+  Question: Manakah yang dibaca 5 harakat?
+  QuestionDesc: Mad Panjang
+  Answers:
+  - {fileID: 21300000, guid: 91342e7f1627a754c8316ba37b549117, type: 3}
+  - {fileID: 21300000, guid: cafe704256e2da34483bd8d6e71151e7, type: 3}
+  - {fileID: 21300000, guid: 26dd73b3d05b43b46a190c8c6856ee36, type: 3}
+  - {fileID: 21300000, guid: e128b8377f2bff140bd6482da48cb2dc, type: 3}
+  CorrectAnswer: 2

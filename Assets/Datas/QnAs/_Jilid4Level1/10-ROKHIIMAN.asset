@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 10-ROKHIIMAN
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C RO - KHII - MAN \u201D ?"
+  QuestionDesc: Tanwin
+  Answers:
+  - {fileID: 21300000, guid: 4f6a11b0c1d9a7446b1142e7f84e674d, type: 3}
+  - {fileID: 21300000, guid: df8bda46d7e3954498ead1e621eaf435, type: 3}
+  - {fileID: 21300000, guid: d995294a52a2de948b023f87bef903d3, type: 3}
+  - {fileID: 21300000, guid: 580b86925f271ef43a14a00611bb0679, type: 3}
+  CorrectAnswer: 2

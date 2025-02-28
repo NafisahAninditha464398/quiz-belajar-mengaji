@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 6-THODLO'A
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C THO - DLO - 'A \u201D?"
+  QuestionDesc: Huruf Terangkai
+  Answers:
+  - {fileID: 21300000, guid: a74f31cf27f086346a309519bdbb395a, type: 3}
+  - {fileID: 21300000, guid: 6e7aa287af90ea14fb328692487aa322, type: 3}
+  - {fileID: 21300000, guid: 9d215f240f5bf6d448f62142bcd27717, type: 3}
+  - {fileID: 21300000, guid: 12b2017b8451b134eb468d94a2c13759, type: 3}
+  CorrectAnswer: 3

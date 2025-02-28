@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 1-WAL'ASHRI
+  m_EditorClassIdentifier: 
+  Question: "Manakah yang dibaca \u201C WAL - 'ASH - RI \u201D?"
+  QuestionDesc: Alif Wasl
+  Answers:
+  - {fileID: 21300000, guid: 50fc201df0046ff4b8e4d74069aea6cb, type: 3}
+  - {fileID: 21300000, guid: 4fe7c025708887c4db29eb4c7dc87c65, type: 3}
+  - {fileID: 21300000, guid: bbca43f0146ff9a4b92f0d572eda304c, type: 3}
+  - {fileID: 21300000, guid: 308cd446dc191264fa4fb5791f90ce74, type: 3}
+  CorrectAnswer: 4

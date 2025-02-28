@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
+  m_Name: 9-YUBAYYIILLANAA
+  m_EditorClassIdentifier: 
+  Question: "Saat \u201Ctanwin\u201D atau \u201Cnun sukun\u201D bertemu \u201Cro\u201D
+    atau \u201Clam\u201D maka akan dilebur, manakah itu?"
+  QuestionDesc: Idgham
+  Answers:
+  - {fileID: 21300000, guid: d9101ec9859884f4f8e1d5a4a7e92260, type: 3}
+  - {fileID: 21300000, guid: 1921f24b8d6b2a947bfb648ed65d50a9, type: 3}
+  - {fileID: 21300000, guid: 9df6281d11b52364597e1fdab17fcced, type: 3}
+  - {fileID: 21300000, guid: 090164a844a2d574c86f52a8d9f1c3af, type: 3}
+  CorrectAnswer: 4
