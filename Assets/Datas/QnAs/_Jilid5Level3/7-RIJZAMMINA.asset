@@ -19,5 +19,5 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bed997a8d1b46094db88c80782504664, type: 3}
   - {fileID: 21300000, guid: dbe3f084f543eb7479d8a02bdbbb9d57, type: 3}
   - {fileID: 21300000, guid: b262921d00d52fe45b080c975b27cb5f, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 6f4cecab4a10c984d990ec86ff8c6457, type: 3}
   CorrectAnswer: 2
