@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
   m_Name: 2-huu
   m_EditorClassIdentifier: 
-  Question: Semua bunyi u disini dibaca panjang, kecuali?
+  Question: Semua bunyi i disini dibaca panjang, kecuali?
   QuestionDesc: Simbol Dua Harakat
   Answers:
   - {fileID: 21300000, guid: 3c1721649d107bb4c92fe0f6c7beb082, type: 3}

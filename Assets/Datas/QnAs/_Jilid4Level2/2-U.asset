@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e4245ce87951e448dd6d0858abdb46, type: 3}
   m_Name: 2-U
   m_EditorClassIdentifier: 
-  Question: "Manakah yang dibaca \u201C I \u201D?"
+  Question: "Manakah yang dibaca \u201C U\u201D?"
   QuestionDesc: Sukun Vokal
   Answers:
   - {fileID: 21300000, guid: 8f5533677f5c22146b2c0b0603e29c14, type: 3}
   - {fileID: 21300000, guid: 03328f90ae9295249b583c9c451d4144, type: 3}
   - {fileID: 21300000, guid: dfc7561e2458a4049b266f2f8aa497e8, type: 3}
   - {fileID: 21300000, guid: 503ad0bed45ac6544835e9564b5a4147, type: 3}
-  CorrectAnswer: 2
+  CorrectAnswer: 4
