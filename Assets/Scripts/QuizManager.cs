@@ -37,7 +37,6 @@ public class QuizManager : MonoBehaviour
             QnAs = level.QnAs;
             totalQuestions = QnAs.Count;
 
-            Debug.Log($"IsQnAs null? : {QnAs}");
             GenerateQuestion();
         }
     }
@@ -50,7 +49,6 @@ public class QuizManager : MonoBehaviour
 
     void GenerateQuestion()
     {
-        Debug.Log("Generated");
         if (!(totalQuestions == 0 || totalQuestions == displayedQuestions.Count))
         {
             do
@@ -64,9 +62,6 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Out of Questions");
-            Debug.Log($"Jumlah pertanyaan: {displayedQuestions.Count}");
-
             if (totalQuestions == score.GetScore())
             {
                 perfectLevel = true;
@@ -83,12 +78,7 @@ public class QuizManager : MonoBehaviour
         {
             options[i].GetComponent<Image>().color = options[i].GetComponent<AnswerScript>().startColor;
             options[i].GetComponent<AnswerScript>().isCorrect = false;
-            // options[i].transform.GetChild(0).GetComponent<Text>().text = QnAs[currentQuestion].Answers[i];
             options[i].transform.GetChild(0).GetComponent<Image>().sprite = QnAs[currentQuestion].Answers[i];
-
-            // ArabicText arabicTextScript = options[i].transform.GetChild(0).GetComponent<ArabicText>();
-            // arabicTextScript.Text = QnAs[currentQuestion].Answers[i];
-            // arabicTextScript.RefreshText();
 
             if (QnAs[currentQuestion].CorrectAnswer == i + 1)
             {

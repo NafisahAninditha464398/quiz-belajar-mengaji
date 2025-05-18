@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    private static ProfilerMarker SectionSelect_Marker = new ProfilerMarker("Section Select Marker");
+    private static ProfilerMarker LevelSelect_Marker = new ProfilerMarker("Level Select Marker");
+    private static ProfilerMarker Achievement_Marker = new ProfilerMarker("Achievement Marker");
+
     public GameObject sectionButtonPrefab; // Prefab untuk button section
     public Transform sectionButtonContainer; // Tempat untuk menampung button
     public GameObject sectionPanel; // Panel untuk menampilkan section
@@ -57,7 +62,6 @@ public class UIManager : MonoBehaviour
     public void SetPlayerProgress(PlayerProgress progress)
     {
         playerProgress = progress;
-        Debug.Log("Called");
     }
 
     public void SetPlayerInfo(PlayerInfoManager playerInfo)
@@ -95,7 +99,6 @@ public class UIManager : MonoBehaviour
     }
     public void ShowLevelPanel(SectionData section)
     {
-        Debug.Log($"lastSection: {section.sectionName}");
         ShowLevelPanelUI();
         GenerateLevelButtons(section);
     }
@@ -150,8 +153,6 @@ public class UIManager : MonoBehaviour
             Transform imgLock = button.transform.Find("lock-img");
             imgLock.gameObject.SetActive(!sectionUnlock);
 
-            Debug.Log($"apakah terbuka: {playerProgress.IsSectionUnlocked(section.sectionId)} di section ID: {section.sectionId}");
-
             // Menambahkan listener untuk button
             button.GetComponent<Button>().onClick.AddListener(() => OnSectionButtonClicked(section));
         }
@@ -159,7 +160,6 @@ public class UIManager : MonoBehaviour
 
     public void GenerateLevelButtons(SectionData section)
     {
-        Debug.Log($"Section Level Ini: {section.sectionId}");
         // Bersihkan container level button sebelum mengisi ulang
 
         sectionTextName.text = section.sectionName;
@@ -202,8 +202,6 @@ public class UIManager : MonoBehaviour
                 progress.value = (float)playerProgress.GetLevelHighScore(section.sectionId, level.levelId) / level.QnAs.Count;
             }
 
-
-
             // Menambahkan listener untuk button
             button.GetComponent<Button>().onClick.AddListener(() => OnLevelButtonClicked(section, level));
         }
@@ -211,12 +209,20 @@ public class UIManager : MonoBehaviour
 
     private void OnSectionButtonClicked(SectionData section)
     {
+        SectionSelect_Marker.Begin();
+
         ShowLevelPanel(section);
+
+        SectionSelect_Marker.End();
     }
     private void OnLevelButtonClicked(SectionData section, LevelData level)
     {
+        LevelSelect_Marker.Begin();
+
         //Memberi tahu Game Manager, game telah dimulai, info level dan section
         OnLevelSelected?.Invoke(section, level);
+
+        LevelSelect_Marker.End();
     }
     public void ShowGamePanel()
     {
@@ -237,7 +243,6 @@ public class UIManager : MonoBehaviour
 
     public void AddAchievementPopup(AchievementData achievement) //ShowAchievementPopup
     {
-        Debug.Log($"Achievement Unlocked: {achievement.achievementName}");
         achievementQueue.Enqueue(achievement);
     }
 
@@ -290,17 +295,19 @@ public class UIManager : MonoBehaviour
 
     public void ShowAchievementPanel()
     {
+        Achievement_Marker.Begin();
+
         achievementPanel.SetActive(true);
-        // List<AchievementData> achievementsUnlock = AchievementManager.Instance.GetUnlockedAchievements();
         List<AchievementData> achievements = AchievementManager.Instance.GetAllAchievements();
         ClearAchievementPanel();
 
         foreach (var achievement in achievements)
         {
-            Debug.Log($"Achievement Sudah Unlocked: {achievement.achievementName}");
             // Tampilkan achievement yang sudah unlock, misalnya melalui UI Manager
             ShowUnlockedAchievement(achievement);
         }
+
+        Achievement_Marker.End();
     }
 
     public void ShowUnlockedAchievement(AchievementData achievement)
